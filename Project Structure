@@ -1,0 +1,26 @@
+- utils package:
+    - fixture_scope.py:
+                   - contains a FixtureScope class that has a usefixtures decorator that calls the setup fixture defined in the conftest.py.
+                   This way test classes defined in the test package that inherit from FixtureScope will use the setup fixture as well
+                   - contains logger method that allows to write logs in a file
+                   - contains generic methods that can be reused for tests (verify_link_presence, select_options_by)
+
+- pages_object package:
+    - checkout_page.py:
+                   - contains a CheckoutPage class with all the necessary attributes and methods to perform actions on the checkout page
+    - confirm_page.py:
+                   - contains a ConfirmPage class with all the necessary attributes and methods to perform actions on the confirmation page
+    - home_page.py:
+                   - contains a HomePage class with all the necessary attributes and methods to perform actions on the home page
+
+- test package:
+    - conftest.py:
+                   - contains the setup fixture that will be used for the tests. For example, create the driver according to the user choice
+                   - contains also a function that allows the user to run pytest with argument (here the browser can be defined as argument)
+
+    - test_end2end.py:
+                   - contains a class TestOne that inherits from the FixtureScope class. A method test_e2e describes the flow to test
+    - test_home_page:
+                   - contains a class TestHomePage that inherits from the FixtureScope class.
+                   A method test_form_submission describes the flow to test.
+                   A method login_credentials using fixture with params allows to run the test with multiple parameters (here different sets of credentials)
