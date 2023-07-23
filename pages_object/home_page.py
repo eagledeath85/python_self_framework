@@ -23,20 +23,20 @@ class HomePage:
         checkout_page = CheckoutPage(self.driver)
         return checkout_page
 
-    def define_name(self):
-        self.driver.find_element(*HomePage.name)
+    def get_name(self):
+        return self.driver.find_element(*HomePage.name)
 
-    def define_email(self):
-        self.driver.find_element(*HomePage.email)
+    def get_email(self):
+        return self.driver.find_element(*HomePage.email)
 
-    def define_password(self):
-        self.driver.find_element(*HomePage.password)
+    def get_password(self):
+        return self.driver.find_element(*HomePage.password)
 
     def get_gender(self):
-        self.driver.find_element(*HomePage.gender)
+        return self.driver.find_element(*HomePage.gender)
 
     def submit_form(self):
-        self.driver.find_element(*HomePage.form)
+        return self.driver.find_element(*HomePage.form)
 
     def get_success_message(self):
-        self.driver.find_element(*HomePage.success_message)
+        return self.driver.find_element(*HomePage.success_message)
